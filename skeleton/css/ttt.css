@@ -20,7 +20,7 @@ li {
   clear: both;
 }
 
-#ttt-game > h1 {
+#ttt-game {
   text-align: center;
   font-family: sans-serif;
 }
@@ -30,6 +30,7 @@ li {
   height: 190px;
   border: 5px solid black;
   float: left;
+  font-size: 200px;
 }
 
 .ttt-grid > li:hover {
@@ -40,6 +41,6 @@ li {
   width: 600px;
   border: 5px solid black;
   margin: 30px auto;
-  background: gray;
+  background: #ccc;
   cursor: pointer;
 }
