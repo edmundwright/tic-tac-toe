@@ -8,19 +8,16 @@
   <body>
     <figure id="ttt-game">
       <h1>Tic Tac Toe</h1>
-
     </figure>
 
     <script src="../js/jquery-2.1.1.js"></script>
-    <!-- Whackjobs at GithubPages don't understand symlinks... -->
-    <script src="../../ttt-core-solution/ttt-core.js"></script>
+    <script src="../js/ttt-core.js"></script>
     <script src="../js/ttt-view.js"></script>
 
     <script>
-      // Write your code here.
-      game = new TTT.Game();
+      var game = new TTT.Game();
       var $el = $("#ttt-game");
-      view = new TTT.View(game, $el);
+      new TTT.View(game, $el);
     </script>
   </body>
 </html>
