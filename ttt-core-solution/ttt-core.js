@@ -24,7 +24,7 @@ Board.makeGrid = function () {
   return grid;
 };
 
-Board.marks = ["x", "o"];
+Board.marks = ["X", "O"];
 
 Board.prototype.isEmptyPos = function (pos) {
   if (!Board.isValidPos(pos)) {
