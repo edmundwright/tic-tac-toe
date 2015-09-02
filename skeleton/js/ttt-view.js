@@ -12,17 +12,12 @@
 
   View.prototype.bindEvents = function () {
     this.$el.on('click','li',function (e) {
-      this.makeMove($(e.target));
+      this.makeMove($(e.currentTarget));
     }.bind(this))
   };
 
   View.prototype.makeMove = function ($square) {
-    if (this.game.isOver()) {
-      return;
-    }
-
-    var posString = $square[0].classList[0];
-    var pos = [parseInt(posString[0]), parseInt(posString[2])];
+    var pos = $square.data('pos');
     var currentPlayer = this.game.currentPlayer;
     try {
       this.game.playMove(pos);
@@ -36,6 +31,7 @@
 
   View.prototype.checkIfOver = function () {
     if (this.game.isOver()){
+      this.$el.off('click');
       if (this.game.winner()) {
         alert("Congradulations " + this.game.winner() +" !")
       } else {
@@ -50,8 +46,9 @@
 
     for (var i = 0; i < 3; i++) {
       for (var j = 0; j < 3; j++) {
-        var pos = [i, j]
-        $ul.append("<li class='" + pos + "'></li>");
+        var $li = $("<li></li>")
+        $li.data('pos', [i, j])
+        $ul.append($li);
       }
     }
   };
